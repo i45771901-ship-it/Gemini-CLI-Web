@@ -4,33 +4,38 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 const timelineEvents = [
   {
     year: "1954",
-    title: "The Miracle of Bern",
-    description: "The German national football team wins the World Cup wearing adidas boots with revolutionary screw-in studs. The 3-Stripes become globally recognized.",
-    category: "Performance"
+    title: "Бернское чудо",
+    description: "Национальная сборная Германии по футболу выигрывает Чемпионат мира в бутсах adidas с революционными завинчивающимися шипами. Три полоски получают мировое признание.",
+    category: "Экипировка",
+    image: "https://images.unsplash.com/photo-1518605368461-1e1e38ce8058?q=80&w=800&auto=format&fit=crop" // Soccer ball/pitch
   },
   {
     year: "1967",
-    title: "Beyond Footwear",
-    description: "The Franz Beckenbauer tracksuit is released. For the first time, adidas produces apparel, expanding the brand beyond just footwear.",
-    category: "Apparel"
+    title: "Больше, чем обувь",
+    description: "Выпущен спортивный костюм Франца Беккенбауэра. Впервые adidas производит одежду, расширяя бренд за пределы только обуви.",
+    category: "Одежда",
+    image: "https://images.unsplash.com/photo-1556821840-3a63f95609a7?q=80&w=800&auto=format&fit=crop" // Jacket/apparel texture
   },
   {
     year: "1970",
-    title: "The Telstar",
-    description: "adidas delivers the official match ball for the FIFA World Cup™. The iconic black-and-white Telstar design changes football visibility on television forever.",
-    category: "Equipment"
+    title: "Telstar",
+    description: "adidas представляет официальный мяч для Чемпионата мира по футболу FIFA™. Культовый черно-белый дизайн Telstar навсегда меняет видимость футбола на телевидении.",
+    category: "Инвентарь",
+    image: "https://images.unsplash.com/photo-1614632537190-23e4146777db?q=80&w=800&auto=format&fit=crop" // Classic soccer ball
   },
   {
     year: "1986",
     title: "My adidas",
-    description: "Hip-hop group Run-D.M.C. releases the track 'My adidas', holding up their Superstars at a concert. The brand officially crosses from sports performance into street culture.",
-    category: "Culture"
+    description: "Хип-хоп группа Run-D.M.C. выпускает трек 'My adidas', поднимая свои Superstar на концерте. Бренд официально переходит из спорта в уличную культуру.",
+    category: "Культура",
+    image: "https://images.unsplash.com/photo-1493225457124-a1a2a5f0f49c?q=80&w=800&auto=format&fit=crop" // Music / street culture
   },
   {
     year: "2015",
-    title: "The Boost Revolution",
-    description: "The introduction of the Ultraboost redefines running technology and sneaker culture, blending ultimate performance with lifestyle appeal.",
-    category: "Innovation"
+    title: "Революция Boost",
+    description: "Появление Ultraboost меняет технологии бега и сникер-культуру, сочетая непревзойденную производительность с повседневной привлекательностью.",
+    category: "Инновации",
+    image: "https://images.unsplash.com/photo-1608231387042-66d1773070a5?q=80&w=800&auto=format&fit=crop" // Modern running shoe sole
   }
 ];
 
@@ -86,13 +91,18 @@ const TimelineCard = ({ event, index }) => {
         </div>
       </div>
 
-      {/* Abstract Visual Placeholder (Opposite Side) */}
+      {/* Visual Presentation (Opposite Side) */}
       <div className={`hidden md:flex w-5/12 ${index % 2 === 0 ? 'mr-auto justify-start pr-16' : 'ml-auto justify-end pl-16'} items-center`}>
-         <div className="relative w-full max-w-sm aspect-video bg-zinc-900 overflow-hidden group-hover:border-zinc-700 border border-zinc-800 transition-colors duration-500">
-            {/* Simple abstract shapes representing the era */}
-            <div className="absolute inset-0 bg-gradient-to-br from-zinc-800/50 to-transparent mix-blend-overlay"></div>
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/5 rounded-full group-hover:scale-110 transition-transform duration-700 ease-out"></div>
-            <div className="absolute font-mono text-[10rem] font-black text-white/5 -bottom-10 -right-4 select-none group-hover:text-white/10 transition-colors duration-500">
+         <div className="relative w-full max-w-sm aspect-video bg-zinc-900 overflow-hidden group-hover:border-zinc-500 border border-zinc-800 transition-colors duration-500">
+            {/* Thematic Image */}
+            <div
+               className="absolute inset-0 bg-cover bg-center grayscale opacity-40 group-hover:opacity-60 mix-blend-luminosity group-hover:scale-105 transition-all duration-700 ease-out"
+               style={{ backgroundImage: `url('${event.image}')` }}
+            />
+
+            <div className="absolute inset-0 bg-gradient-to-br from-black/80 to-transparent mix-blend-overlay"></div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-32 h-32 border border-white/10 rounded-full group-hover:scale-110 group-hover:border-white/30 transition-all duration-700 ease-out"></div>
+            <div className="absolute font-mono text-[10rem] font-black text-white/10 -bottom-10 -right-4 select-none group-hover:text-white/20 transition-colors duration-500">
               {event.year.slice(-2)}
             </div>
          </div>
@@ -119,12 +129,12 @@ export const Timeline = () => {
 
         {/* Section Header */}
         <div className="text-center mb-32">
-          <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-zinc-500 mb-4">Evolution</h2>
+          <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-zinc-500 mb-4">Эволюция</h2>
           <h3 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase tracking-tighter">
-            Shaping Culture
+            Формируя культуру
           </h3>
           <p className="mt-6 text-zinc-400 max-w-2xl mx-auto font-light">
-            A journey from pure sports performance into fashion, music, streetwear, and lifestyle.
+            Путь от чистых спортивных достижений к моде, музыке, уличной одежде и стилю жизни.
           </p>
         </div>
 

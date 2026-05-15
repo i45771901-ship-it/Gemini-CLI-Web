@@ -17,13 +17,19 @@ export const Hero = () => {
       ref={containerRef}
       className="relative h-screen flex flex-col items-center justify-center overflow-hidden bg-black text-white"
     >
-      {/* Abstract Motion Background */}
+      {/* Abstract Motion Background with Thematic Image */}
       <motion.div
-        className="absolute inset-0 z-0 flex items-center justify-center opacity-20"
+        className="absolute inset-0 z-0 flex items-center justify-center opacity-40"
         style={{ y: yBg }}
       >
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black z-10" />
-        <div className="flex gap-8 lg:gap-16 transform -rotate-12 scale-150">
+        {/* Background Image: Stadium lights / Sports abstract */}
+        <div
+          className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?q=80&w=2000&auto=format&fit=crop')]
+          bg-cover bg-center grayscale opacity-30 mix-blend-screen"
+        />
+
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-transparent to-black z-10" />
+        <div className="flex gap-8 lg:gap-16 transform -rotate-12 scale-150 opacity-50">
           {[1, 2, 3].map((i) => (
             <motion.div
               key={i}
@@ -47,22 +53,22 @@ export const Hero = () => {
         style={{ opacity: opacityText, y: yText }}
       >
         <motion.h1
-          className="text-5xl md:text-7xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-8"
+          className="text-4xl md:text-6xl lg:text-8xl font-black uppercase tracking-tighter leading-[0.9] mb-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          adidas: Built on Sport,<br/>
-          <span className="text-gray-400">Shaped by Culture</span>
+          adidas: Создано спортом,<br/>
+          <span className="text-gray-400">Сформировано культурой</span>
         </motion.h1>
 
         <motion.p
-          className="text-lg md:text-2xl text-gray-300 max-w-2xl mx-auto font-light tracking-wide"
+          className="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto font-light tracking-wide"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 0.8 }}
         >
-          From Adi Dassler&apos;s mission to improve athlete performance to a global icon defining sportswear and street culture.
+          От миссии Ади Дасслера по улучшению результатов спортсменов до глобальной иконы, определяющей спортивную одежду и уличную культуру.
         </motion.p>
       </motion.div>
 
@@ -73,7 +79,7 @@ export const Hero = () => {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 1 }}
       >
-        <span className="text-xs uppercase tracking-[0.2em] text-gray-400">Discover</span>
+        <span className="text-xs uppercase tracking-[0.2em] text-gray-400">Исследовать</span>
         <motion.div
           className="w-[1px] h-12 bg-gradient-to-b from-white to-transparent origin-top"
           animate={{

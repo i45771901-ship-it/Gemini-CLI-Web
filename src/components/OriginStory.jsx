@@ -32,9 +32,9 @@ export const OriginStory = () => {
           style={{ y, opacity }}
         >
           <div>
-            <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-gray-500 mb-4">The Workshop</h2>
+            <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-gray-500 mb-4">Мастерская</h2>
             <h3 className="text-4xl md:text-5xl lg:text-6xl font-black uppercase leading-tight mb-8">
-              Herzogenaurach,<br/>
+              Херцогенаурах,<br/>
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-500">
                 1949.
               </span>
@@ -43,13 +43,13 @@ export const OriginStory = () => {
 
           <div className="prose prose-invert prose-lg">
             <p className="text-gray-300 font-light leading-relaxed mb-6">
-              On August 18, 1949, Adolf &quot;Adi&quot; Dassler started over. At 49 years old, he registered the <strong className="text-white font-medium">&quot;Adolf Dassler adidas Sportschuhfabrik&quot;</strong> and set to work in the small Bavarian town of Herzogenaurach.
+              18 августа 1949 года Адольф &quot;Ади&quot; Дасслер начал всё сначала. В возрасте 49 лет он зарегистрировал <strong className="text-white font-medium">&quot;Adolf Dassler adidas Sportschuhfabrik&quot;</strong> и приступил к работе в небольшом баварском городке Херцогенаурах.
             </p>
             <p className="text-gray-300 font-light leading-relaxed mb-6">
-              He began with 47 employees and an unrelenting obsession: providing athletes with the best possible equipment.
+              Он начал с 47 сотрудников и непреклонной одержимости: обеспечить спортсменов наилучшей возможной экипировкой.
             </p>
             <p className="text-gray-300 font-light leading-relaxed">
-              That same year, he registered a shoe that included the registration of the soon-to-be-famous <strong className="text-white font-medium">adidas 3-Stripes</strong>. From a modest workshop, the foundation of a global icon was laid.
+              В том же году он зарегистрировал обувь, которая включала регистрацию ставших вскоре знаменитыми <strong className="text-white font-medium">трех полосок adidas</strong>. Из скромной мастерской был заложен фундамент глобальной иконы.
             </p>
           </div>
         </motion.div>
@@ -62,6 +62,11 @@ export const OriginStory = () => {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
+          {/* Archival Background Image */}
+          <div
+             className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542291026-7eec264c27ff?q=80&w=1000&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-20 mix-blend-overlay transition-transform duration-1000 group-hover:scale-105"
+          />
+
           {/* Decorative Corner Accents */}
           <div className="absolute top-0 left-0 w-8 h-8 border-t border-l border-white/20" />
           <div className="absolute top-0 right-0 w-8 h-8 border-t border-r border-white/20" />
@@ -69,7 +74,7 @@ export const OriginStory = () => {
           <div className="absolute bottom-0 right-0 w-8 h-8 border-b border-r border-white/20" />
 
           <div className="text-right">
-            <span className="font-mono text-xs text-gray-500 uppercase tracking-widest">Archive Ref: 1949-AD</span>
+            <span className="font-mono text-xs text-gray-500 uppercase tracking-widest">Архив: 1949-AD</span>
           </div>
 
           <div className="flex-1 flex items-center justify-center relative">
@@ -92,15 +97,15 @@ export const OriginStory = () => {
                 <div className="w-4 h-32 bg-white/90 shadow-[0_0_15px_rgba(255,255,255,0.3)] translate-y-4"></div>
               </div>
               <div className="text-center mt-4">
-                <span className="block text-xs uppercase tracking-[0.3em] text-gray-400 mb-1">Registered</span>
-                <span className="block font-black text-2xl tracking-tighter">August 18, 1949</span>
+                <span className="block text-xs uppercase tracking-[0.3em] text-gray-400 mb-1">Зарегистрировано</span>
+                <span className="block font-black text-2xl tracking-tighter">18 Августа 1949</span>
               </div>
             </div>
           </div>
 
           <div className="text-xs text-gray-600 uppercase tracking-widest flex justify-between">
             <span>Gebrüder Dassler Schuhfabrik → adidas</span>
-            <span>Est. 1949</span>
+            <span>Осн. 1949</span>
           </div>
         </motion.div>
 

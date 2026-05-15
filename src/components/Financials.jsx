@@ -37,7 +37,7 @@ const CounterCard = ({ title, valuePerSecond, elapsedSeconds, isProfit = false }
 
         {/* Main Live Counter */}
         <div className="mb-8">
-            <span className="text-xs uppercase tracking-widest text-zinc-600 block mb-2">Since opening page</span>
+            <span className="text-xs uppercase tracking-widest text-zinc-600 block mb-2">С момента открытия страницы</span>
             <div className="text-4xl md:text-5xl lg:text-6xl font-black tracking-tighter text-white font-mono tabular-nums">
             {formatCurrency(currentValue)}
             </div>
@@ -46,19 +46,19 @@ const CounterCard = ({ title, valuePerSecond, elapsedSeconds, isProfit = false }
         {/* Breakdown Grid */}
         <div className="grid grid-cols-2 gap-4 border-t border-zinc-800 pt-6">
           <div>
-            <span className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1">Per Second</span>
+            <span className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1">В секунду</span>
             <span className="text-sm font-mono text-zinc-300">{formatCurrency(valuePerSecond)}</span>
           </div>
           <div>
-            <span className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1">Per Minute</span>
+            <span className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1">В минуту</span>
             <span className="text-sm font-mono text-zinc-300">{formatCurrency(valuePerSecond * 60)}</span>
           </div>
           <div>
-            <span className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1">Per Hour</span>
+            <span className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1">В час</span>
             <span className="text-sm font-mono text-zinc-300">{formatCurrency(valuePerSecond * 3600)}</span>
           </div>
           <div>
-            <span className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1">Per Day</span>
+            <span className="block text-[10px] uppercase tracking-widest text-zinc-500 mb-1">В день</span>
             <span className="text-sm font-mono text-zinc-300">{formatCurrency(valuePerSecond * 86400)}</span>
           </div>
         </div>
@@ -106,23 +106,23 @@ export const Financials = () => {
 
         {/* Header */}
         <div className="text-center mb-24">
-          <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-zinc-500 mb-4">Financial Scale</h2>
+          <h2 className="text-sm font-bold tracking-[0.3em] uppercase text-zinc-500 mb-4">Финансовый масштаб</h2>
           <h3 className="text-4xl md:text-5xl lg:text-7xl font-black uppercase tracking-tighter mb-8">
-            The Speed of Sport
+            Скорость спорта
           </h3>
           <p className="text-xl text-zinc-400 font-light max-w-3xl mx-auto">
-            Witness the real-time financial momentum of a global icon, calculated from the 2025 annual results.
+            Следите за финансовой динамикой мирового бренда в реальном времени, рассчитанной на основе годовых результатов 2025 года.
           </p>
         </div>
 
         {/* Global 2025 Context */}
         <div className="grid grid-cols-2 md:flex justify-center gap-8 md:gap-24 mb-16 text-center border-y border-zinc-900 py-10">
              <div>
-                <span className="block text-xs uppercase tracking-widest text-zinc-500 mb-2">2025 Net Sales</span>
+                <span className="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Чистые продажи 2025</span>
                 <span className="text-2xl md:text-4xl font-black tracking-tight text-white">{formatLargeCurrency(NET_SALES_2025)}</span>
              </div>
              <div>
-                <span className="block text-xs uppercase tracking-widest text-zinc-500 mb-2">2025 Net Income</span>
+                <span className="block text-xs uppercase tracking-widest text-zinc-500 mb-2">Чистая прибыль 2025</span>
                 <span className="text-2xl md:text-4xl font-black tracking-tight text-white">{formatLargeCurrency(NET_INCOME_2025)}</span>
              </div>
         </div>
@@ -130,12 +130,12 @@ export const Financials = () => {
         {/* Live Counters */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
           <CounterCard
-            title="Revenue Velocity"
+            title="Скорость выручки"
             valuePerSecond={REVENUE_PER_SECOND}
             elapsedSeconds={elapsedSeconds}
           />
           <CounterCard
-            title="Profit Velocity"
+            title="Скорость прибыли"
             valuePerSecond={PROFIT_PER_SECOND}
             elapsedSeconds={elapsedSeconds}
             isProfit={true}
@@ -145,7 +145,7 @@ export const Financials = () => {
         {/* Visualizer Bar */}
         <div className="w-full h-8 bg-zinc-900 rounded-full overflow-hidden flex relative">
             <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                 <span className="text-[10px] uppercase tracking-widest text-white/50 font-mono mix-blend-difference">Real-time Visualization</span>
+                 <span className="text-[10px] uppercase tracking-widest text-white/50 font-mono mix-blend-difference">Визуализация в реальном времени</span>
             </div>
             {/* Simulate high-frequency data streams */}
             {[...Array(20)].map((_, i) => (
@@ -169,7 +169,7 @@ export const Financials = () => {
 
         <div className="mt-12 text-center text-xs text-zinc-600 font-light max-w-2xl mx-auto">
           <p>
-            * Based on adidas 2025 annual financial results. Revenue and profit per second are calculated from annual net sales and net income respectively, divided by the number of seconds in a year (31,536,000). The counters display estimated accumulation since this page was loaded.
+            * Основано на годовых финансовых результатах adidas за 2025 год. Выручка и прибыль в секунду рассчитываются путем деления годовых чистых продаж и чистой прибыли соответственно на количество секунд в году (31 536 000). Счетчики отображают расчетное накопление с момента загрузки этой страницы.
           </p>
         </div>
 

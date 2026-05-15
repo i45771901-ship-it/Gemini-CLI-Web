@@ -25,7 +25,7 @@ function App() {
       </main>
 
       <footer className="bg-black border-t border-zinc-900 py-12 px-6 text-center text-zinc-600 text-xs font-mono uppercase tracking-widest">
-         &copy; {new Date().getFullYear()} adidas. Built for demonstration purposes.
+         &copy; {new Date().getFullYear()} adidas. Создано в демонстрационных целях.
       </footer>
     </div>
   );
