@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => {
 
   return {
     plugins: [react(), tailwindcss()],
-    server: {
+    server: { allowedHosts: true,
       port: VITE_PORT,
       strictPort: true,
       proxy: {
